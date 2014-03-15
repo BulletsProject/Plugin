@@ -8,6 +8,15 @@
 	border:0px;
 	padding:0px;
 }
+/*
+#bulletsplugin *
+{
+	padding:0px;
+	margin:0px;
+	line-height:0;
+	vertical-align: top;
+	font-size: 100%;
+}
 #bulletsplugin > *
 {
 	position: absolute;
@@ -16,6 +25,18 @@
 	top:0px;
 	left:0px;
 }
+#bulletsplugin .logged_in {
+	background: white;
+}
 #bulletsplugin .not_logged_in {
 	background: #f26765;
 }
+#bulletsplugin .not_logged_in .logo{
+	display:inline-block;
+}
+#bulletsplugin .not_logged_in .fb_login{
+	margin-left:11px;
+	margin-top:8px;
+	display:inline-block;
+}
+*/

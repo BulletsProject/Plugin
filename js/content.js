@@ -14,8 +14,13 @@ function ContentController()
 	$.get(pluginUrl + '/res/html/plugin.html', function(data){
 		var data = $(data);
 		$('body').append(data);
-		$('#bulletsplugin .not_logged_in .logo img').attr('src', pluginUrl + '/res/gfx/LogoLong.png');
+		// $('#bulletsplugin .not_logged_in .logo img').attr('src', pluginUrl + '/res/gfx/LogoLong.png');
+		// $('#bulletsplugin .not_logged_in .fb_login img').attr('src', pluginUrl + '/res/gfx/FBLogin.png');
+		// $('#bulletsplugin .logged_in .logo img').attr('src', pluginUrl + '/res/gfx/Logo.png');
 	});
+}
+
+ContentController.prototype.login = function() {
 }
 
 ContentController.prototype.showPlugin = function() {
