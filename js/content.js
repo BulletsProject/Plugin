@@ -10,24 +10,18 @@ function ContentController()
 			that[request.method]();
 		}
 	});
+
+	$.get(pluginUrl + '/res/html/plugin.html', function(data){
+		var data = $(data);
+		$('body').append(data);
+		$('#bulletsplugin .not_logged_in .logo img').attr('src', pluginUrl + '/res/gfx/LogoLong.png');
+	});
 }
 
 ContentController.prototype.showPlugin = function() {
 	if($('#bulletsplugin').length == 0)
 	{
-		$.get(pluginUrl + '/res/html/iframe.html', function(data){
-			var data = $(data);
-			$('body').append(data);
-
-			$('#bulletsplugin').attr('src', pluginUrl + '/res/html/plugin.html'); 
-			// $('.not_logged_in .logo img', $('#bulletsplugin').get(0).contentWindow).attr('src', pluginUrl + '/res/gfx/LogoLong.png'); 
-			
-			$('*', $('#bulletsplugin').get(0).contentWindow).remove();
-
-			$('#bulletsplugin').load(function(){
-				$('#bulletsplugin').animate({top: 0}, 250);
-			});
-		});
+		$('#bulletsplugin').animate({top: 0}, 250);
 	}
 	else {
 		$('#bulletsplugin').animate({top: 0}, 250);

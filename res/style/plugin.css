@@ -1,0 +1,21 @@
+#bulletsplugin {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	top:-50px;
+	left: 0px;
+	z-index:2147483647;
+	border:0px;
+	padding:0px;
+}
+#bulletsplugin > *
+{
+	position: absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+}
+#bulletsplugin .not_logged_in {
+	background: #f26765;
+}
