@@ -19,15 +19,16 @@
 			"matches": ["<all_urls>"],
 			"js": ["libs/jquery/jquery-2.1.0.min.js", "js/content.js"],
 			"css": ["res/style/plugin.css"],
-			"run_at": "document_end"
+			"run_at": "document_end",
+			"all_frames" : false
 		}
 	],
 	"permissions": [
 		"tabs",
 		"background",
+		"storage",
 		"<all_urls>"
 	],
-
 	"web_accessible_resources": [
 		"*"
 	]

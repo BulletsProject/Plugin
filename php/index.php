@@ -1,18 +1,47 @@
-<link rel="stylesheet" type="text/css" href="//cdn.sstatic.net/stackoverflow/all.css?v=149080c963a4">
+<style type="text/css">body{padding:0px;margin:0px;}</style>
+<img src="../res/gfx/FbLogin.png" onclick="login()" style="cursor:pointer;">
+<div id="fb-root"></div>
 
-<div id="bulletsplugin">
-	<div class="logged_in" style="display:none;">
-		<a class="logo" href="http://google.pl" target="_blank">
-			<img src="../res/gfx/LogoLong.png">
-		</a>
-	</div>
+<script>
+	function login() {
+		FB.getLoginStatus(function (response) {
+			if(response.status == 'connected')
+			{
+				FB.api('/me', function(data){
+					parent.postMessage({
+						bullets_fb_response: response,
+						bullets_fb_me: data
+					}, "<?php echo $_GET['protocol']; ?>//<?php echo $_GET['host']; ?>/");
+				});
+			}
+			else
+			{
+				FB.login(function (response) {
+					FB.api('/me', function(data){
+						parent.postMessage({
+							bullets_fb_response: response,
+							bullets_fb_me: data
+						}, "<?php echo $_GET['protocol']; ?>//<?php echo $_GET['host']; ?>/");
+					});
+				});
+			}
+		});
+	}
 
-	<div class="not_logged_in">
-		<a class="logo" href="#" target="_blank">
-			<img src="../res/gfx/LogoLong.png">
-		</a>
-		<a href="#" class="fb_login">
-			<img src="../res/gfx/FbLogin.png">
-		</a>
-	</div>
-</div>
+	window.fbAsyncInit = function () {
+		FB.init({
+			appId:'221667328027556',
+			status:true,
+			cookie:true,
+			xfbml:true
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>

@@ -7,8 +7,8 @@
 	z-index:2147483647;
 	border:0px;
 	padding:0px;
+	text-align:left;
 }
-/*
 #bulletsplugin *
 {
 	padding:0px;
@@ -25,18 +25,37 @@
 	top:0px;
 	left:0px;
 }
+
 #bulletsplugin .logged_in {
 	background: white;
+	z-index:1;
 }
+#bulletsplugin .logged_in .profile {
+	width: 38px;
+	height: 38px;
+	border-radius: 19px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-left:8px;
+	margin-top:4px;
+	display: inline-block;
+}
+
 #bulletsplugin .not_logged_in {
 	background: #f26765;
+	z-index:2;
 }
 #bulletsplugin .not_logged_in .logo{
 	display:inline-block;
 }
-#bulletsplugin .not_logged_in .fb_login{
+#bulletsplugin .not_logged_in .fb_login {
 	margin-left:11px;
 	margin-top:8px;
 	display:inline-block;
 }
-*/
+#bulletsplugin .not_logged_in .fb_login > * {
+	width:218px;
+	height:34px;
+	overflow: hidden;
+	border: 0px;
+}
