@@ -3,10 +3,11 @@
 	"name": "Bullets",
 	"version": "0.1",
 	"icons": {
+		"16": "res/gfx/icon19.png",
 		"128": "res/gfx/icon.png"
 	},
 	"browser_action": {
-		"default_icon": "res/gfx/icon.png"
+		"default_icon": "res/gfx/icon19.png"
 	},
 	"background": {
 		"scripts": [
@@ -16,12 +17,16 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["js/content.js"]
+			"js": ["js/content.js", "libs/jquery/jquery-2.1.0.min.js"]
 		}
 	],
 	"permissions": [
 		"tabs",
 		"background",
 		"<all_urls>"
+	],
+
+	"web_accessible_resources": [
+		"*"
 	]
 }
